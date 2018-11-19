@@ -25,10 +25,20 @@ SimMaker::~SimMaker()
     if (ptobsvsdiffpt) delete ptobsvsdiffpt;
 }
 
-Int_t Init()
+Int_t SimMaker::Init()
 {
     Float_t par = 2; 
     SimEvtGen::SetPtPar(par);
     simevtgen = new SimEvtGen();
     simevtobs = new SimEvtObs(simevtgen);
+    t = new TNtuple("simevt", "simevt");
+    ptgen = new TH1F("ptgen", "ptgen", 100, 0, 10);
+    ptobs = new TH1F("ptobs", "ptobs", 100, 0, 10);
+}
+
+Int_t SimMaker::MakeEvent()
+{
+    if (!simevtgen) return -1;
+    simevtgen->ClearInfo();
+    simevtgen->Generate();
 }

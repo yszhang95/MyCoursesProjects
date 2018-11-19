@@ -10,6 +10,8 @@ class SimEvtObs;
 class SimMaker
 {
   private:
+    Int_t MakeEvent();
+
     SimEvtGen *simevtgen;
     SimEvtObs *simevtobs;
     TNtuple *t;
