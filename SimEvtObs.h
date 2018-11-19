@@ -12,8 +12,8 @@ public:
     // void SetPt(Float_t pt) { mpt = pt; };
     // void SetE(Float_t e) { me = e; };
     // void SetCosTheta(Float_t cosTheta) { mcosTheta = cosTheta; };
-    void SetPtPar(Float_t par) { mptpar = par; };
-    void ClearInfo() { mptpar=0; mpt=0; me=0; mcosTheta=0; };
+    static void SetPtPar(const Float_t par) { mptpar = par; };
+    void ClearInfo() { mpt=0; me=0; mcosTheta=0; };
     Int_t Generate();
     Float_t GetPt() const {return mpt; } ;
     Float_t GetE() const {return me; } ;
