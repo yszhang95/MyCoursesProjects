@@ -1,11 +1,12 @@
 #include "SimEvtObs.h"
 #include "TMath.h"
 #include "TRandom.h"
+#include "TRandom3.h"
 
 ClassImp(SimEvtGen);
 ClassImp(SimEvtObs);
 
-SimEvtGen::Generate()
+Int_t SimEvtGen::Generate()
 {
     if(!mptpar) return -1;
     TRandom3 rpt, rtheta;
@@ -60,13 +61,13 @@ Int_t SimEvtObs::SetEResParAndErr(Float_t par)
         meerr = TMath::Sqrt(simevtgen->GetE()) * merespar;
         return 0;
     }
-    if (!simevtgen) { return -1; }
+    return -1; 
 }
 
 Int_t SimEvtObs::SetThetaErr(Float_t err)
 {
-    if (simevtgen) {mthetaerr = err; return 0;}
-    if (!simevtgen) { return -1; }
+    if (simevtgen) {mcosThetaerr = err; return 0;}
+    return -1;
 }
 
 Int_t SimEvtObs::SetCosTheta(Float_t costheta)
@@ -75,18 +76,16 @@ Int_t SimEvtObs::SetCosTheta(Float_t costheta)
         mcosThetaobs = costheta;
         return 0;
     }
-    if (!simevtgen) {
-        return -1;
-    }
+    return -1;
 }
 
-Int_t SetE()
+Int_t SimEvtObs::SetE()
 {
     if (simevtgen) {
         TRandom3 r;
         if (!meerr) return -1;
         meobs = r.Gaus(simevtgen->GetE(), meerr);
-        return 0
+        return 0;
     }
     return -1;
 }
@@ -97,9 +96,8 @@ Int_t SimEvtObs::SetE(Float_t e)
         meobs = e;
         return 0;
     }
-    if (!simevtgen) {
-        return -1;
-    }
+    return -1;
+}
 
 Int_t SimEvtObs::SetPt()
 {
@@ -108,9 +106,7 @@ Int_t SimEvtObs::SetPt()
         mptobs = meobs * TMath::Sqrt(1 - mcosThetaobs * mcosThetaobs);
         return 0;
     }
-    if (!simevtgen){
-        return -1;
-    }
+    return -1;
 }
 
 Int_t SimEvtObs::SetPt(Float_t pt)
@@ -119,9 +115,7 @@ Int_t SimEvtObs::SetPt(Float_t pt)
         mptobs = pt;
         return 0;
     }
-    if (!simevtgen) {
-        return -1;
-    }
+    return -1;
 }
 Int_t SimEvtObs::SetPtErr()
 {
@@ -135,5 +129,5 @@ Int_t SimEvtObs::SetPtErr()
         mpterr = TMath::Sqrt(sumw2);
         return 0;
     }
-    return -1
+    return -1;
 }

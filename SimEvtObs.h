@@ -35,7 +35,7 @@ class SimEvtObs : public TObject{
     SimEvtObs();
     SimEvtObs(SimEvtGen*);
     virtual ~SimEvtObs();
-    Int_t SetEResAndPar(Float_t);
+    Int_t SetEResParAndErr(Float_t);
     Int_t SetThetaErr(Float_t);
     Int_t SetPtErr();
     Int_t SetCosTheta(Float_t);
