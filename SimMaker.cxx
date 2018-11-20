@@ -1,5 +1,6 @@
 #include "SimMaker.h"
 
+#include "TFile.h"
 #include "TNtuple.h"
 #include "TH1F.h"
 #include "TH2F.h"
@@ -17,6 +18,8 @@ Int_t SimEvtGen::Generate()
 {
     if(!mptpar) return -1;
     TRandom3 rpt, rtheta;
+    rpt.SetSeed(0);
+    rtheta.SetSeed(0);
     mpt = rpt.Exp(mptpar);
     mcosTheta = rtheta.Uniform(0.9925461516, 0.9961946981);
     me = mpt / TMath::Sqrt(1 - mcosTheta*mcosTheta);
@@ -25,7 +28,6 @@ Int_t SimEvtGen::Generate()
 
 SimEvtGen::~SimEvtGen()
 {
-    mptpar = 0;
 }
 
 SimEvtObs::SimEvtObs() : simevtgen(0)
@@ -167,20 +169,21 @@ SimMaker::SimMaker()
 {
     simevtgen = 0;
     simevtobs = 0;
+    f = 0;
     t = 0;
     hptgen = 0;
     hptobs = 0;
     hptobsvsdiffpt = 0;
+    hegenvseobs = 0;
 }
 
 SimMaker::~SimMaker()
 {
-    if (simevtgen) delete simevtgen;
     if (simevtobs) delete simevtobs;
-    if (t) delete t;
-    if (hptgen) delete hptgen;
-    if (hptobs) delete hptobs;
-    if (hptobsvsdiffpt) delete hptobsvsdiffpt;
+    //if (t) delete t;
+    //if (hptgen) delete hptgen;
+    //if (hptobs) delete hptobs;
+    //if (hptobsvsdiffpt) delete hptobsvsdiffpt;
 }
 
 Int_t SimMaker::Init()
@@ -189,13 +192,16 @@ Int_t SimMaker::Init()
     SimEvtGen::SetPtPar(par);
     simevtgen = new SimEvtGen();
     simevtobs = new SimEvtObs(simevtgen);
+    f = new TFile("simevt.root", "recreate");
+    f->cd();
     TString varlist = "ptgen:egen:costhetagen:"
                        "ptobs:eobs:costhetaobs:"
                        "pterr:eerr:costhetaerr:erespar";
-    t = new TNtuple("simevt", "simevt", varlist.Data());
+    t = new TNtuple("simevt", "simevt", varlist.Data(), 2^31);
     hptgen = new TH1F("ptgen", "ptgen", 100, 0, 10);
     hptobs = new TH1F("ptobs", "ptobs", 100, 0, 10);
     hptobsvsdiffpt = new TH2F("ptobsvsdiffpt", "ptobsvsdiffpt",20, 10, 10, 100, 0, 10);
+    hegenvseobs = new TH2F("egenvseobs", "egenvseobs",200, 0, 100, 200, 0, 100);
     return 0;
 }
 
@@ -227,13 +233,29 @@ Int_t SimMaker::MakeEvent()
     Float_t diffpt = simevtgen->GetPt() - simevtobs->GetPtObs();
     hptobsvsdiffpt->Fill(simevtgen->GetPt(), diffpt);
 
+    hegenvseobs->Fill(simevtgen->GetE(), simevtobs->GetEObs());
+
     return 0;
 }
 
 Int_t SimMaker::Make(Int_t noevt)
 {
-    Init();
-    for(int i=0; i<noevt; ++i)
+    for(int i=0; i<noevt; ++i){
         MakeEvent();
+        if (i%100000==0) std::cout << i/100000 << "e5" << std::endl;
+    }
+    return 0;
+}
+
+Int_t SimMaker::Finish()
+{
+    if(!f) return -1;
+    f->cd();
+    t->Write();
+    hptgen->Write();
+    hptobs->Write();
+    hptobsvsdiffpt->Write();
+    hegenvseobs->Write();
+//    f->Close();
     return 0;
 }

@@ -3,6 +3,7 @@
 
 #include "TObject.h"
 
+class TFile;
 class TNtuple;
 class TH1F;
 class TH2F;
@@ -86,15 +87,22 @@ class SimMaker
 
     SimEvtGen *simevtgen;
     SimEvtObs *simevtobs;
+    TFile* f;
     TNtuple *t;
     TH1F* hptgen;
     TH1F* hptobs;
     TH2F* hptobsvsdiffpt;
+    TH2F* hegenvseobs;
 
   public:
     SimMaker();
     Int_t Init();
     Int_t Make(Int_t);
+    Int_t Finish();
+    TH1F* GethPtGen() const { return hptgen; };
+    TH1F* GethPtObs() const { return hptobs; };
+    TH2F* GethPtObsVsDiffPt() const { return hptobsvsdiffpt; };
+    
     virtual ~SimMaker();
 };
 
