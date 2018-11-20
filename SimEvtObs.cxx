@@ -18,6 +18,7 @@ Int_t SimEvtGen::Generate()
 
 SimEvtGen::~SimEvtGen()
 {
+    mptpar = 0;
 }
 
 SimEvtObs::SimEvtObs() : simevtgen(0)
@@ -51,6 +52,29 @@ SimEvtObs::SimEvtObs(SimEvtGen* evtgen)
 SimEvtObs::~SimEvtObs()
 {
     if(simevtgen) delete simevtgen;
+}
+
+void SimEvtObs::ClearInfo()
+{
+    mptobs = 0;
+    meobs = 0;
+    mcosThetaobs = 0;
+    mpterr = 0;
+    meerr = 0;
+    mcosThetaerr = 0;
+    merespar = 0;
+}
+
+Int_t SimEvtObs::Generate(Float_t par, Float_t costheta, Float_t costhetaerr)
+{
+    if(!simevtgen) return -1;
+    SetEResParAndErr(par);
+    SetE();
+    SetCosTheta(costheta);
+    SetPt();
+    SetThetaErr(costhetaerr);
+    SetPtErr();
+    return 0;
 }
 
 Int_t SimEvtObs::SetEResParAndErr(Float_t par)

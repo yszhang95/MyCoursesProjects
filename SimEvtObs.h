@@ -3,11 +3,17 @@
 
 #include "TObject.h"
 
-class TNtuple;
-
 class SimEvtGen : public TObject {
+private:
+    SimEvtGen& operator=(const SimEvtGen&);
+    SimEvtGen(const SimEvtGen&);
+    static Float_t mptpar;
+    Float_t mpt;
+    Float_t me;
+    Float_t mcosTheta;
+
 public:
-    SimEvtGen() {}; 
+    SimEvtGen() { mptpar=0; mpt=0; me=0; mcosTheta=0;}; 
     virtual ~SimEvtGen();
     // void SetPt(Float_t pt) { mpt = pt; };
     // void SetE(Float_t e) { me = e; };
@@ -19,22 +25,20 @@ public:
     Float_t GetE() const {return me; } ;
     Float_t GetCosTheta() const {return mcosTheta; } ;
 
-private:
-    SimEvtGen& operator=(const SimEvtGen&);
-    SimEvtGen(const SimEvtGen&);
-    Float_t mptpar;
-    Float_t mpt;
-    Float_t me;
-    Float_t mcosTheta;
-
     ClassDef(SimEvtGen, 1);
 };
+
+Float_t SimEvtGen::mptpar = 0;
 
 class SimEvtObs : public TObject{
   public:
     SimEvtObs();
     SimEvtObs(SimEvtGen*);
     virtual ~SimEvtObs();
+
+    void ClearInfo();
+    Int_t Generate(Float_t, Float_t, Float_t);
+
     Int_t SetEResParAndErr(Float_t);
     Int_t SetThetaErr(Float_t);
     Int_t SetPtErr();
@@ -43,6 +47,13 @@ class SimEvtObs : public TObject{
     Int_t SetE(Float_t);
     Int_t SetPt();
     Int_t SetPt(Float_t);
+    Float_t GetPtObs() const { return mptobs; };
+    Float_t GetPtErr() const { return mpterr; };
+    Float_t GetEObs() const { return meobs; };
+    Float_t GetEErr() const { return meerr; };
+    Float_t GetCosThetaObs() const { return mcosThetaobs; };
+    Float_t GetCosThetaErr() const { return mcosThetaerr; };
+    Float_t GetEResPar()const { return merespar; };
 
   private:
     SimEvtObs& operator=(const SimEvtGen&);
