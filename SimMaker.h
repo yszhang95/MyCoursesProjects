@@ -44,6 +44,7 @@ class SimEvtObs : public TObject{
 
     void ClearInfo();
     Int_t Generate(Float_t, Float_t, Float_t);
+    Int_t GenerateWithTail(Float_t, Float_t, Float_t);
 
     Int_t SetEResParAndErr(Float_t);
     Int_t SetThetaErr(Float_t);
@@ -84,7 +85,7 @@ class SimEvtObs : public TObject{
 class SimMaker
 {
   private:
-    Int_t MakeEvent();
+    Int_t MakeEvent(Float_t, Bool_t);
 
     SimEvtGen *simevtgen;
     SimEvtObs *simevtobs;
@@ -98,7 +99,7 @@ class SimMaker
   public:
     SimMaker();
     Int_t Init(TString);
-    Int_t Make(Int_t);
+    Int_t Make(Int_t, Float_t, Bool_t);
     Int_t Finish();
     TH1F* GethPtGen() const { return hptgen; };
     TH1F* GethPtObs() const { return hptobs; };

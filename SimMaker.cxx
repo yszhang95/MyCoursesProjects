@@ -86,6 +86,23 @@ Int_t SimEvtObs::Generate(Float_t par, Float_t costheta, Float_t costhetaerr)
     return 0;
 }
 
+Int_t SimEvtObs::GenerateWithTail(Float_t par, Float_t costheta, Float_t costhetaerr)
+{
+    if(!simevtgen) return -1;
+    TRandom3 r;
+    r.SetSeed(0);
+    if(r.Uniform(0, 1)<0.03)
+        SetEResParAndErr(5*par);
+    else 
+        SetEResParAndErr(par);
+    SetE();
+    SetCosTheta(costheta);
+    SetPt();
+    SetThetaErr(costhetaerr);
+    SetPtErr();
+    return 0;
+}
+
 Int_t SimEvtObs::SetEResParAndErr(Float_t par)
 {
     if (simevtgen) {
@@ -116,6 +133,7 @@ Int_t SimEvtObs::SetE()
 {
     if (simevtgen) {
         TRandom3 r;
+        r.SetSeed(0);
         if (!meerr) return -1;
         meobs = r.Gaus(simevtgen->GetE(), meerr);
         return 0;
@@ -205,13 +223,14 @@ Int_t SimMaker::Init(TString filename = "sample.root")
     return 0;
 }
 
-Int_t SimMaker::MakeEvent()
+Int_t SimMaker::MakeEvent(Float_t epar, Bool_t tail = false)
 {
     if (!simevtgen) return -1;
     simevtgen->ClearInfo();
     simevtgen->Generate();
     simevtobs->ClearInfo();
-    simevtobs->Generate(0.1, 0.9943704249 , 0);
+    if(!tail) simevtobs->Generate(epar, 0.9943704249 , 0.001);
+    if(tail) simevtobs->GenerateWithTail(epar, 0.9943704249, 0.001);
 
     Float_t vararray[10];
     Int_t i=0;
@@ -238,10 +257,10 @@ Int_t SimMaker::MakeEvent()
     return 0;
 }
 
-Int_t SimMaker::Make(Int_t noevt)
+Int_t SimMaker::Make(Int_t noevt, Float_t epar, Bool_t tail=false)
 {
     for(int i=0; i<noevt; ++i){
-        MakeEvent();
+        MakeEvent(epar, tail);
         if (i%100000==0) std::cout << i/100000 << "e5" << std::endl;
     }
     return 0;
