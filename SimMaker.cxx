@@ -186,13 +186,13 @@ SimMaker::~SimMaker()
     //if (hptobsvsdiffpt) delete hptobsvsdiffpt;
 }
 
-Int_t SimMaker::Init()
+Int_t SimMaker::Init(TString filename = "sample.root")
 {
     Float_t par = 2; 
     SimEvtGen::SetPtPar(par);
     simevtgen = new SimEvtGen();
     simevtobs = new SimEvtObs(simevtgen);
-    f = new TFile("simevt.root", "recreate");
+    f = new TFile(filename.Data(), "recreate");
     f->cd();
     TString varlist = "ptgen:egen:costhetagen:"
                        "ptobs:eobs:costhetaobs:"

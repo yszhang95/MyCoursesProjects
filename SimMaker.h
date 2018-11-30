@@ -7,6 +7,7 @@ class TFile;
 class TNtuple;
 class TH1F;
 class TH2F;
+class TString;
 
 class SimEvtGen : public TObject {
 private:
@@ -96,7 +97,7 @@ class SimMaker
 
   public:
     SimMaker();
-    Int_t Init();
+    Int_t Init(TString);
     Int_t Make(Int_t);
     Int_t Finish();
     TH1F* GethPtGen() const { return hptgen; };
