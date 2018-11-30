@@ -5,3 +5,5 @@ This is a simulation project assigned in PHYS 542.
     `root -b -q SimMaker.cxx+`
 2. execute the macro simmaker.C
     `root -b -q simmaker.C`
+
+The ROOT version is 6.14/04
