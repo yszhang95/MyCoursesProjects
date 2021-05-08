@@ -1,0 +1,6 @@
+#+TITLE: Gravitational lensing
+#+AUTHOR: Yousen Zhang
+#+EMAIL: yousen.zhang@rice.edu
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage[margin=2in]{geometry}
+#+LATEX_HEADER: \usepackage[doublespacing]{setspace}
