@@ -2,5 +2,176 @@
 #+AUTHOR: Yousen Zhang
 #+EMAIL: yousen.zhang@rice.edu
 #+LATEX_CLASS: article
-#+LATEX_HEADER: \usepackage[margin=2in]{geometry}
+#+LATEX_CLASS_OPTIONS: [letter,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage[doublespacing]{setspace}
+#+LATEX_HEADER: \usepackage{amsmath}
+* Introduction
+** Zwicky
+   - virial theorem to the VIrgo and Coma clusters of galaxies, ~ 4E11 M_{sun}.
+   - detect remote galaxy existence.
+** Refsdal
+   Hubble constant could be measured through gravitational lensing of
+   a variable source, utilizing time delay.
+** Schmidt 1963
+   Experimental discovery of quasars helps people find a way to detect
+   gravitational lensing
+** Walsh, Carsweel, Weymann 1979
+   First discovery of gravitational lensing, quasar QSO 0957+561A,B.
+   - The similarity of the spectra of the two images.
+   - The fact that the flux ratio between the images is similar in the
+     optical and radio wave bands
+   - the presence of a foreground galaxy between the images
+   - VLBI observations which show detailed correspondence between
+     various knots of the emission in the two radio images
+** microlensing
+** Einstein rings
+   The discovery of radio waveband by Hewitt et al. (1987)
+** Gravitational lensing by galaxy clusters
+   Giant blue luminous arcs. The arcs are the images of background
+   galaxies which are strongly distorted and elongated by the
+   gravitational len effect of the foreground cluster.
+   Confirmed when the first arc redshifts were measured.
+
+   /Arclets/ proposed by Tyson 1988.
+** Three categories
+   1. The magnification effect enables us to observe objects which are
+      too distant or too hard to observe without lensing.
+   2. Dark matter exploration and growth and strucutre of mass
+      condensations in the universe
+   3. Explore the age, the scale, the overall geometry of the
+      universe.
+* Lensing by point masses in the universe
+  RW metric to describe Universe.
+
+  Approximate algorithm: a locally flat, Minkowskian spacetime,
+  newtonian gravitational potential |\Psi| << c^2; peculiar velocity
+  v of the lens is small, v << c.
+** Effective refractive index of a gravitational field
+   Shapiro delay (1964).
+
+   Integrated angle deflection 4GM/c^{2}b
+** Thin screen approximation
+   Superposition of the thin mass disk.
+** Lensing geometry and lens equation
+   Lens equation:
+   \begin{equation}
+\overrightarrow{\beta} = \overrightarrow{\theta} - \overrightarrow{\alpha}(\overrightarrow{\theta})
+   \end{equation}
+
+   The relation separation = angle \times distance is not necessary to
+   hold in curved spacetimes. If the D_d, D_s, D_ds are /defined/ in a way
+   that the relation holds, then the lens equations obviously hold.
+
+   A instructive special case is a lens with a constant surface-mass
+   density. One can define critical surface-mass density
+   as
+   \begin{equation}
+\Sigma_{\mathrm{cr}} = \frac{c^2}{4\pi G}\frac{D_\mathrm{s}}{D_\mathrm{d}D_\mathrm{ds}}
+   \end{equation}
+
+   At critical surface-mass density, \beta = 0 for all \theta. A lens
+   focuses perfectly.
+
+   A lens which has \(\Sigma > \Sigma_{cr} \) is referred to as being
+   /supercritical/ sometimes. Usually imaging occurs only if the lens is
+   /supercritical/. However these are exceptions.
+** Einstein radius
+   With a circular symmetric lens with supercritical mass density, a
+   source which lies on the optic axis (\beta=0) is imaged as a ring.
+   And the raidus of the ring is to be
+   \begin{equation}
+\theta_E = \bbig[ \frac{4GM(\theta_E)}{c^2} \frac{D_{ds}}{D_d D_s}\bbig]
+   \end{equation}
+
+   This is referred to as the Einstein radius.
+
+   A typical angular separation of images is of order 2\theta_{E} in
+   case of multiple imaging.
+
+   Sources which are closer than about \theta_E to the optic experience
+   strong lensing in the sense that they are significantly magnified,
+   whereas sources which are located well outside the Einstein ring
+   are magnified very little.
+** Imaging by a point mass lens
+   One image is outside the Einstein ring and the other is inside.
+   \begin{equation}
+\theta_{\pm} = 0.5 * (\beta\pm\sqrt{\beta^2+4\theta_E^2})
+   \end{equation}
+
+   The magnification factor for a circularly symmetric lens is given
+   by
+   \begin{equation}
+\mu = \frac{\theta}{\beta}\frac{d\theta}{d\beta}
+   \end{equation}
+   The image inside the Einstein ring has its parity flipped with
+   respect to the source.
+
+   How to detect the effect? The lens and source move relative to
+   each other, giving rise to lensing-induced time variability of
+   the source.
+** Microlensing in the galaxy
+* Lensing by galaxies
+** Lensing by a singular isothermal sphere
+   Asumming that the stars and other mass components behave like
+   particles of an ideal gas, confined by their combined, spherically
+   symmetric gravitational potential, the mass distribution is called
+   singular isothermal sphere,
+   \begin{equation}
+\rho(r) = \frac{\sigma_v^2}{2\pi G} \frac{1}{r^2}
+   \end{equation}
+
+   Multiple images are obtained only if the source lies inside the
+   Einstein ring and
+   \begin{equation}
+\theta_E = \alpha
+   \end{equation}
+   and
+   \begin{equation}
+\theta_{\pm} = \beta\pm\theta_{E}
+   \end{equation}
+** Effective lensing potential
+   Projected Newtonian potential \psi satifies the two-dimensional
+   possion equation. It can be written as
+   \begin{equation}
+\psi(\overrightarrow{\theta}) = \frac{1}{\pi} \int \kappa(\overrightarrow{\theta'})\ln|\overrightarrow{\theta}-\overrightarrow{\theta'}|d^2\theta'
+   \end{equation}
+   where \(\kappa(\theta) = \Sigma(\theta)/\Sigma_{cr}\).
+
+   Jacobian matrix (inverse of )
+   - convergence
+   - shear
+** Gravitational lensing via Fermat's principle
+   Fermat's principle:
+   \begin{equation}
+\overrightarrow{\nabla_{\theta}} t(\overrightarrow{\theta}) = 0
+   \end{equation}
+   where \(t(\overrightarrow{\theta)}\) is the time delay function,
+   proportional to
+   \(\frac{1}{2}(\overrightarrow{\theta}-\overrightarrow{\beta})^2-\psi(\overrightarrow{\theta})\).
+   Here \(\frac{1}{2}(\overrightarrow{\theta}-\overrightarrow{\beta})^2\)
+   is related to geometry and \psi(\theta) is realted to gravitation.
+** Properties of the time-delay function
+   - The images are located where time-delay surface t(\theta) is
+     stationary.
+   - The height between two stationary points on t(\theta) gives the
+     relative time delay between corresponding images. Any variablity
+     in the source is observed first in the image corresponding
+     to the lowest point on the surface, followed by the extrema
+     located at successively larger values of t.
+   - Three types of stationary points: minima (I), saddle points (II),
+     and maxima (III). They are determined by Hessian matrix of
+     t(\theta), which is proportional to /A/ (Jacobian).
+   - The magnification of types I and III are positive and that of
+     type II is negative.
+   - When the curvature (proportional to Hessian matrix) of t(\theta)
+     along one coordinate direction is small, the image is strongly
+     magnified along that direction. The brightest image
+     configurations are obtained when a pair of images are close
+     together, just prior to merging. The lines in \theta-space on
+     which images merge are referred to as critical lines, while the
+     corresponding source positions in \beta-space are called
+     caustics.
+   - When the source is far from the lens, we expect only a single
+     image, corresponding to a minimum of the time delay surface.
+     New extrema are always created in pairs.
