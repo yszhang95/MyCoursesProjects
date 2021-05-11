@@ -1,0 +1,116 @@
+#+TITLE: Gravitational lensing
+#+AUTHOR: Yousen Zhang
+#+EMAIL: yousen.zhang@rice.edu
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [letter,12pt]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \usepackage[doublespacing]{setspace}
+#+LATEX_HEADER: \usepackage{amsmath}
+
+# Local Variables:
+# org-ref-bibliography-notes: "notes.org"
+# org-ref-default-bibliography: ("refs.bib")
+# bibtex-completion-notes-path: "."
+# org-latex-pdf-process: ("pdflatex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "pdflatex -interaction nonstopmode -output-directory %o %f" "pdflatex -interaction nonstopmode -output-directory %o %f")
+# End:
+
+* Introduction
+  <<sec:intro>>
+  The general relativity is a theory of gravitation, established by
+  Einstein in 1915. It is a generalization of the special relativity,
+  in which theory the speed of light remains the same in all inertial
+  frames and the physical laws are expressed in covariant forms,
+  independent on the frames. In addition to the postulates above, two
+  additional principles are proposed in the general relativity. The
+  first one is that the inertial mass shows equivalence to the
+  gravitational mass. The effects from gravity can be effectively
+  eliminated in a small local region of space and time. In this sense,
+  physical laws seem the same as they are in flat space-time described
+  by Minkowskian space. The second principle is that the space-time is
+  curved rather than flat. The curvature is determined the gravity via
+  Einstein field equations.
+
+  Over the past century, the general relativity shows success through
+  the consistency with a lot of experiments. The perihelion precession
+  of planets are well described by Einstein's theory
+  cite:RevModPhys.19.361.  The precession of 42.88'' of Mercury's
+  orbit strongly supports the theory, for instance. The observation of
+  redshifts also shows the evidence of effects from the general
+  relativity. Pound and Rebka detected the energy loss of \gamma ray
+  at the receiver higher than the emitter, making use of M\"{o}ssbauer
+  effect cite:PhysRevLett.4.337. Recent observation of the
+  gravitational radiation shows great success of the theory of
+  relativity as well. LIGO collaboration announced the detection of
+  the gravitational waves from a binary black hole merger
+  cite:Abbott:2016blz.
+
+  Besides the phenomena mentioned above, an intriguing effects is the
+  deflection of light by a massive object.  The light ray travels
+  along the geodesic which is not "straight" line anymore as a result
+  of curved space-time. This effect induce an interesting phenomena
+  called gravitational lensing, which was first proposed by Einstein
+  cite:Einstein506. If a massive object is placed between the source
+  and the observer, the light rays will be deflected and thus the
+  observer may find magnified images of the source. This phenomena was
+  confirmed by the discovery of quasar QSO 0957+561A,B cite:Walsh:1979nx.
+
+  This paper will discuss the theoretical basics and experimental
+  results briefly. It is orgnized in the following way: simple models
+  of gravitational lensing will be introduced in Sec. [[sec:theo]]; the
+  results in experiment will be discussed in Sec. [[sec:expr]]; and
+  summary and outlook will be outlined in Sec. [[sec:summ]].
+
+* Theoretical aspects
+  <<sec:theo>>
+
+  In this section, a few simple models of gravitational lensing will
+  be discussed. Two catogeries will be introduced: lensing by the
+  point mass and lensing by the galaxy. Here we follow the
+  deriviations from cite:narayan_lectures_1997.
+
+  In general, the mathematical formulism is hard to resolve and quite
+  complicated for the light propagation in an arbitrary curved
+  space. We limit ourselves in this paper by the weak gravitational
+  field and non-relativistic condition. Therefore the spacetime can be
+  described by a locally flat Minkowskian spacetime with perturbatoins
+  from the lensing object with Newtonian gravitational potential. The
+  motion of the mass object inducing lensing effect is also very slow.
+  These conditions are satified in most times. See discussions in
+  cite:narayan_lectures_1997.
+
+** Lensing by point mass
+   <<sec:theo-point-mass>>
+   The light ray from distant source
+
+  Lensing equation
+  \begin{equation}
+\overrightarrow{\beta} = \overrightarrow{\theta} - \overrightarrow{\alpha}(\overrightarrow{\theta}) \label{eqn:len}
+  \end{equation}
+
+** Lensing by galaxies
+   <<sec:theo-galaxies>>
+
+* Experimental aspects
+  <<sec:expr>> As mentioned in Sec. [[sec:intro]], the discovery of
+  QSO957+561A,B shows strong evidence of the existence of
+  gravitational lensing effect cite:Walsh:1979nx. The results are
+  briefly discussed here. QSO957+561A,B are images of a single
+  quasar. A quasar is also known as a quasi-stellar object (QSO),
+  discovered by cite:schmidt_3c_1963. It is the nuclear region with
+  extremly high luminosity of a remote galaxy. As a result of large
+  distantance, the probability of observing lensing effects of massive
+  objects between quasars and observers become large. Quasars provide
+  opportunities to discover gravitational lensing in experiments. The
+  explanation of lensing effects for two images, QSO957+561A,B,
+  separated by 6'', was finally confirmed by cite:1984ApJ_287_538G.
+
+* Summary and outlook
+  <<sec:summ>> The theoretical basics and experimental outputs have
+  been presented in this paper. The gravitational lensing as a
+  manifestation of Einstein's theory have been observed in many
+  experiments. In addition to serving merely tests for the theory of
+  gravitation, the lensing effects have advantages for astronomical
+  observations.
+
+bibliographystyle:unsrt
+bibliography:refs.bib
