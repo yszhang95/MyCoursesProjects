@@ -102,7 +102,55 @@
   objects between quasars and observers become large. Quasars provide
   opportunities to discover gravitational lensing in experiments. The
   explanation of lensing effects for two images, QSO957+561A,B,
-  separated by 6'', was finally confirmed by cite:1984ApJ_287_538G.
+  separated by 6'', was finally confirmed by
+  cite:1980ApJ_241_507Y,1984ApJ_287_538G. The evidence is provided by
+  the facts below:
+  - The similarity of flux spectra between two images.
+  - The intervening galaxy between images and the observers
+  - The luminous distribution of cores of two images are related by a
+    magnification matrix according to lensing effects.
+
+  In addition to the test of gravitation theory, the lensing effects
+  can also help in several ways in the astronomical measurements. It
+  was proposed that the Hubble constant could be measured through the
+  gravitational lensing cite:1964MNRAS_128_307R. The time of light
+  propagation of two images are uneven since the effective length of
+  path are different. The time delay difference \Delta\tau between two
+  images is proportional to the difference of path of length and thus
+  the inverse of Hubble constant (H_0^{-1}). The product H_0\Delta\tau
+  depends merely on the geometric positions of sources, lensing and
+  observers and the model of lensing effects. Once H_0\Delta\tau is
+  determined and \Delta\tau is measured, the Hubble constant is also
+  obtained.
+
+  The way using gravitational lensing to determine Hubble constant has
+  several advantages cite:narayan_lectures_1997:
+  - The sources are distant at large redshifts and their velocities
+    can be considered small enough compared to the Hubble flow.
+  - The measurements does not wait for the motion of sources with the
+    expansion of the universe. There is no need to measure the
+    increasing distance and time interval. The time delay of images
+    can be measured in a short time.
+  - The gravitational lensing originates the general relativity, which
+    is well tested in a series of experiments. It is less
+    model-dependent or less empircal.
+
+  To precisely measure the Hubble constant, serveral difficulties need
+  to be overcome. These include: the precision measurements of the
+  differences between arrival times of multiple images; the
+  understanding of the distortion of the angular diameter distances
+  along the line of sight; the model for the masss distribution of the
+  lens cite:Birrer_2020. The procedures of time delay measurements has
+  been validated via simulations. The distortion of line of sight is
+  corrected statistically via comparisons with numerical simulations
+  and the residual is negligible compared to overall
+  uncertainties. The third issue is still under process. One recent
+  measurement implementing gravitational lensing infers that the the
+  value of Hubble constant is $73.3^{+1.7}_{1.8}$ km s^{-1} Mpc^{-1},
+  in agreement with local measurements type Ia supernovae
+  cite:Wong_2019.
+
+
 
 * Summary and outlook
   <<sec:summ>> The theoretical basics and experimental outputs have
@@ -110,7 +158,21 @@
   manifestation of Einstein's theory have been observed in many
   experiments. In addition to serving merely tests for the theory of
   gravitation, the lensing effects have advantages for astronomical
-  observations.
+  observations. It helps in several aspects: detecting the distant
+  objects which is invisible without lensing effects; probing the mass
+  distribution of the lensing objects, for instance, dark matters;
+  determining the overall properties of the universe. These
+  measurements have enriched the knowledge for the universe and
+  provide valuable experiences to explore further.
 
-bibliographystyle:unsrt
+  The recent measurements of Hubble constant shows discrepancy between
+  the early universe value from cosmic micro waves and late universe
+  value from gravitational lensing with a tension of $5.3\sigma$
+  cite:Wong_2019.  This raise a question whether there is new physics
+  behind the puzzle. Before proposing new physics theories, further
+  constraints on the cosmography of time delay are needed at
+  first. The precision of H_0 values by gravitational lensing can be
+  further improved.
+
+bibliographystyle:abbrv
 bibliography:refs.bib
