@@ -17,6 +17,10 @@
 # org-latex-pdf-process: ("pdflatex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "pdflatex -interaction nonstopmode -output-directory %o %f" "pdflatex -interaction nonstopmode -output-directory %o %f")
 # End:
 
+\begin{abstract}
+Gravitational lensing effect was proposed in 1936 and finally observed in 1979. Besides the test of general relativity, it has become one of the most powerful techniques in astronomy, to probe dark matter and the geometry of the universe. In this paper, I will discuss the theoretical basics of the lensing effect and experimental results. These including the observation of the twin quasars, the application of gravitational lensing in determination of distributions of dark matter, and the measurements of Hubble constant.
+\end{abstract}
+
 * Introduction
   <<sec:intro>>
   The general relativity is a theory of gravitation, established by
@@ -36,7 +40,7 @@
   Over the past century, the general relativity shows success through
   the consistency with a lot of experiments. The perihelion precession
   of planets are well described by Einstein's theory
-  cite:RevModPhys.19.361.  The precession of 42.88'' of Mercury's
+  citep:RevModPhys.19.361.  The precession of 42.88'' of Mercury's
   orbit strongly supports the theory, for instance. The observation of
   redshifts also shows the evidence of effects from the general
   relativity. cite:PhysRevLett.4.337 detected the energy loss of
@@ -48,7 +52,7 @@
   citep:Abbott:2016blz.
 
   Besides the phenomena mentioned above, an intriguing effects is the
-  deflection of light by a massive object.  The light ray travels
+  deflection of light by a massive object. The light ray travels
   along the geodesic which is not "straight" line anymore as a result
   of curved space-time. This effect induce an interesting phenomena
   called gravitational lensing, which was first proposed by
@@ -59,7 +63,7 @@
   cite:Walsh:1979nx.
 
   This paper will discuss the theoretical basics and experimental
-  results briefly. It is orgnized in the following way: simple models
+  results briefly. It is organized in the following way: simple models
   of gravitational lensing will be introduced in Sec. [[sec:theo]]; the
   results in experiment will be discussed in Sec. [[sec:expr]]; and
   summary and outlook will be outlined in Sec. [[sec:summ]].
@@ -68,18 +72,18 @@
   <<sec:theo>>
 
   In this section, a few simple models of gravitational lensing will
-  be discussed. Two catogeries will be introduced: lensing by the
+  be discussed. Two categories will be introduced: lensing by the
   point mass and lensing by the galaxy. Here we follow the
-  deriviations from cite:narayanlectures1997.
+  derivations in cite:narayanlectures1997.
 
   In general, the mathematical formulism is hard to resolve and quite
   complicated for the light propagation in an arbitrary curved
   space. We limit ourselves in this paper by the weak gravitational
   field and non-relativistic condition. Therefore the spacetime can be
-  described by a locally flat Minkowskian spacetime with perturbatoins
+  described by a locally flat Minkowskian spacetime with perturbations
   from the lensing object with Newtonian gravitational potential. The
   motion of the mass object inducing lensing effect is also very slow.
-  These conditions are satified in most times. See discussions in
+  These conditions are satisfied in most times. See discussions in
   cite:narayanlectures1997.
 
   <<sec:theo-point-mass>> The light ray from distant source will be
@@ -116,7 +120,7 @@ where M is the mass of lensing
 \label{eq:alpha-mass-1D}
 \end{equation}
   where \xi is the distance from the lens center and M(\xi) is the
-  mass enclosed within the raidus \xi, give by
+  mass enclosed within the radius \xi, given by
 \begin{equation}
 M(\xi) = 2\pi \int^{\xi}_0 \Sigma(\xi')\xi'd\xi'.
 \label{eq:m-1D}
@@ -127,14 +131,14 @@ M(\xi) = 2\pi \int^{\xi}_0 \Sigma(\xi')\xi'd\xi'.
 [[./figures/one_image.png]]
 
   As mentioned above, in the approximation of locally flat Minkowskian
-  spacetime with perturbatoins of gravitation, the relation
+  spacetime with perturbations of gravitation, the relation
 \begin{equation}
 separation = distance \times angle \label{eq:distance}
 \end{equation}
   holds.  Denoting the distance between the observer and the source,
   the observer and the lens, and the lens and the source with D_s, D_d
-  and D_ds, respecitively, we will have $\theta D_s = \beta D_s -
-  \hat{\alpha}D_{ds}$. This relation is obivous as illustrated in
+  and D_ds, respectively, we will have $\theta D_s = \beta D_s -
+  \hat{\alpha}D_{ds}$. This relation is obvious as illustrated in
   Fig. [[fig:one_image]].  Introducing reduced deflection angle
   \begin{equation}
 \vec{\alpha} = \frac{D_{ds}}{D_s} \vec{\hat{\alpha}},
@@ -159,7 +163,7 @@ separation = distance \times angle \label{eq:distance}
 \Sigma_{cr} = \frac{c^2}{4\pi G} \frac{D_s}{D_d D_{ds}}. \label{eq:sigma-critical}
 \end{equation}
   The light rays from the sources perfectly focus on the position of
-  observer, though the focus length depends on both the lensing ojbect
+  observer, though the focus length depends on both the lensing object
   and the positions of the source and the observer. In this case, the
   mass density is referred as /critical/ surface mass density. In case
   of \Sigma > \Sigma_{cr}, multiple images will show up and the
@@ -171,7 +175,7 @@ separation = distance \times angle \label{eq:distance}
 \begin{equation}
 \beta(\theta) = \theta - \frac{D_{ds}}{D_d D_s} \frac{4GM(\theta)}{c^2\theta} \label{eq:len-circular}.
 \end{equation}
-  For a source lying on the optic axis (\theta=0) the solution for the images reads
+  For a source lying on the optic axis (\beta=0) the solution for the images reads
    \begin{equation}
 \theta_E = \bigg[ \frac{4GM(\theta_E)}{c^2} \frac{D_{ds}}{D_d D_s}\bigg]^{1/2}
    \end{equation}
@@ -193,13 +197,13 @@ separation = distance \times angle \label{eq:distance}
 \end{equation}
   Thus one is inside the Einstein ring and the other is outside.
 
-  Though the phenomena is intestering, the magnification of point
-  mass lens is hard to observe unless the lens is extremly
+  Though the phenomena is intersting, the magnification of point
+  mass lens is hard to observe unless the lens is extremely
   massive. However, the detection become reliable if the lens and the
   source move relative to each other. The relative motion will enlarge
   the lensing-induced time delay and the effect is referred as
   microlensing if the lensing object has stellar mass. And it has been
-  observed in QSO09567+561.
+  observed in QSO 2237+0305 citep:1990ApJ_358L_33W.
 
   <<sec:theo-galaxies>> The point mass model has been discussed so
   far. It turns out complicated and dependent on the model of mass
@@ -213,7 +217,7 @@ separation = distance \times angle \label{eq:distance}
    \begin{equation}
 p = \frac{\rho kT}{m} \label{eq:thermal-energy}
    \end{equation}
-  where \rho is the mass densty of the galaxy and the m is the mass
+  where \rho is the mass density of the galaxy and the m is the mass
   of the constituent. In thermal equilibrium, we have
    \begin{equation}
 \frac{1}{2} m \sigma_{v}^2 = \frac{1}{2} kT
@@ -238,7 +242,7 @@ p = \frac{\rho kT}{m} \label{eq:thermal-energy}
   them here.
 
   It is also useful to define the the projected Newtonian potential of
-  the lens. It is related the magnification of the lens. The projected
+  the lens. It is related to the magnification of the lens. The projected
   potential is defined as
 \begin{equation}
 \psi(\vec{\theta}) = \frac{D_{ds}}{D_d D_s} \frac{2}{c^2} \int \Phi(D_d \vec{\theta}, z)dz
@@ -299,18 +303,23 @@ tensor. The quantity \gamma denotes the magnitude of the shear and
 \end{equation}
 
 * Experimental results
+  #+CAPTION: Quasar QSO09567+561. Credit: Hubble Space Telescope.
+  #+NAME: fig:twin
+  [[./figures/twin.jpg]]
+
   <<sec:expr>> As mentioned in Sec. [[sec:intro]], the discovery of
   QSO957+561A,B shows strong evidence of the existence of
-  gravitational lensing effect citep:Walsh:1979nx. The results are
-  briefly discussed here. QSO957+561A,B are images of a single
-  quasar. A quasar is also known as a quasi-stellar object (QSO),
-  discovered by cite:schmidt3c1963. It is the nuclear region with
-  extremly high luminosity of a remote galaxy. As a result of large
-  distantance, the probability of observing lensing effects of massive
-  objects between quasars and observers become large. Quasars provide
-  opportunities to discover gravitational lensing in experiments. The
-  explanation of lensing effects for two images, QSO957+561A,B,
-  separated by 6'', was finally confirmed by
+  gravitational lensing effect citep:Walsh:1979nx. Fig. [[fig:twin]]
+  shows the image of the quasar QSO957+561 by Hubble Space Telescope.
+  The results are briefly discussed here. QSO957+561A,B are images of
+  a single quasar. A quasar is also known as a quasi-stellar object
+  (QSO), discovered by cite:schmidt3c1963. It is the nuclear region
+  with extremely high luminosity of a remote galaxy. As a result of
+  large distance, the probability of observing lensing effects of
+  massive objects between quasars and observers become large. Quasars
+  provide opportunities to discover gravitational lensing in
+  experiments. The explanation of lensing effects for two images,
+  QSO957+561A,B, separated by 6'', was finally confirmed by
   cite:1980ApJ241507Y,1984ApJ287538G. Fig. [[fig:spectra-QSO0957-561]]
   show the spectra of wavelength of QSO957+561A,B and they show
   similarity with each other. The evidence is provided by the facts
@@ -347,21 +356,22 @@ tensor. The quantity \gamma denotes the magnitude of the shear and
     can be measured in a short time.
   - The gravitational lensing originates the general relativity, which
     is well tested in a series of experiments. It is less
-    model-dependent or less empircal.
+    model-dependent or less empirical.
 
-  To precisely measure the Hubble constant, serveral difficulties need
+  To precisely measure the Hubble constant, several difficulties need
   to be overcome. These include: the precision measurements of the
   differences between arrival times of multiple images; the
   understanding of the distortion of the angular diameter distances
-  along the line of sight; the model for the masss distribution of the
+  along the line of sight; the model for the mass distribution of the
   lens citep:Birrer2020. The procedures of time delay measurements has
-  been validated via simulations. The distortion of line of sight is
-  corrected statistically via comparisons with numerical simulations
-  and the residual is negligible compared to overall
-  uncertainties. The third issue is still under process. One recent
-  measurement implementing gravitational lensing infers that the the
-  value of Hubble constant is $73.3^{+1.7}_{1.8}$ km s^{-1} Mpc^{-1},
-  in agreement with local measurements type Ia supernovae
+  been validated via simulations citep:2015ApJ_799_168D. The
+  distortion of line of sight is corrected statistically via
+  comparisons with numerical simulations citep:2011MNRAS_410_2167F and
+  the residual is negligible compared to overall uncertainties
+  citep:Millon_2020. The third issue is still under investigation. One
+  recent measurement implementing gravitational lensing infers that
+  the the value of Hubble constant is $73.3^{+1.7}_{1.8}$ km s^{-1}
+  Mpc^{-1}, in agreement with local measurements type Ia supernovae
   citep:Wong2019. Fig. [[fig:H0wong]] shows the probability density
   distribution of H_0.
 
@@ -375,19 +385,21 @@ tensor. The quantity \gamma denotes the magnitude of the shear and
   and dark energy. And it merely depends on the mass distributions of
   dark matters, regardless the their intrinsic nature.
 
-  The spatial distribution is more extended than the expectations
-  merely with visible baryons, shows the clear evidence of the dark
-  matter.
-
   However, several issues presents in the processes of exploration of
   dark matters. Signals from large-scale structure is very faint with
   little chance to detect. And mass distributions of measurable
   galaxies are need to be fixed as priori. The atmosphere of the Earth
   also smears the signal. To overcome these difficulties, Hubble Space
   Telescope was launched. It produced the projected 2D map of dark
-  matters for the fist time. The similarity between maps of dark
-  matters and maps of baryonic matters indicates that dark matters are
-  still under the rule of gravitation.
+  matters for the fist time citep:Massey2007. Fig. [[fig:dark-matter]]
+  shows the comparison between the distributions of dark matters and
+  ordinary matters. The similarity between maps of dark matters and
+  maps of baryonic matters indicates that dark matters are still under
+  the rule of gravitation citep:Ellis2010darkmatter.
+
+  #+CAPTION: The projected distribution of dark matters and baryonic matters. (a) The blue maps the density distribution of dark matter citep:Massey2007. (b) Equivalent map of baryonic matter. Credit: Hubble Space Telescope
+  #+NAME: fig:dark-matter
+  [[./figures/dark_matter.png]]
 
   In addition to the studies of dark matters in cluster, the search
   for dark matters in a galaxy is also of interests. The gravitational
@@ -421,6 +433,18 @@ tensor. The quantity \gamma denotes the magnitude of the shear and
   constraints on the cosmography of time delay are needed at
   first. The precision of H_0 values by gravitational lensing can be
   further improved.
+
+  There are also discrepancies between the standard cold dark mater
+  (CDM) paradigm and observations. cite:Meneghetti_2020 reported an
+  excess of more than an order of magnitude of gravitational lensing
+  than the predictions from CDM simulations. Either the unresolved
+  systematic issues with simulations or the correction to CDM model
+  are needed to explain the results.
+
+  In summary, gravitational lensing manifest itself the evidence of
+  general relativity. It is also valuable probe to explore the
+  universe. More interesting physics phenomena can be explored in the
+  future, using the lensing technique.
 
 bibliographystyle:abbrvnat
 bibliography:refs.bib
