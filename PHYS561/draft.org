@@ -18,7 +18,7 @@
 # End:
 
 \begin{abstract}
-Gravitational lensing effect was proposed in 1936 and finally observed in 1979. Besides the test of general relativity, it has become one of the most powerful techniques in astronomy, to probe dark matter and the geometry of the universe. In this paper, I will discuss the theoretical basics of the lensing effect and experimental results. These including the observation of the twin quasars, the application of gravitational lensing in determination of distributions of dark matter, and the measurements of Hubble constant.
+Gravitational lensing effect was proposed in 1936 and finally observed in 1979. Besides the test of general relativity, it has become one of the most powerful techniques in astronomy, to probe dark matter and the geometry of the universe. In this paper, I will discuss the theoretical basics of the lensing effect and experimental results. These include the observation of the twin quasars, the application of gravitational lensing in determination of distributions of dark matter, and the measurements of Hubble constant.
 \end{abstract}
 
 * Introduction
